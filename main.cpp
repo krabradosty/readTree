@@ -12,10 +12,10 @@ int main() {
   Int_t muNpe;
 
 
-  TFile* inputFile = new TFile("/home/krab/out_ds20kwt_result.root");
+  TFile* inputFile = new TFile("/home/krab/supernova.root");
   TTree* tree =(TTree*) inputFile->Get("dstree");
   TFile* outputFile = new TFile("/home/krab/out.root", "RECREATE");
-  TH1F* hMuTime = new TH1F("hMuTime", "Time distribution of photoelectron registration;t_{pe} [ns];number", 500, 0, 1500);
+  TH1F* hMuTime = new TH1F("hPeTime", "Time distribution of photoelectron registration;t_{pe} [ns];number", 250, 0, 1000);
 
   tree->SetBranchAddress("munpe", &muNpe);
   tree->SetBranchAddress("mupe_time", mupeTime);
